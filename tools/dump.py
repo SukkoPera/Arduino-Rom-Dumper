@@ -5,7 +5,7 @@ import serial
 
 LOGFILE = "dump.bin"
 SERIAL = "/dev/ttyUSB0"
-SPEED = 9600
+SPEED = 115200
 TIMEOUT = 1000	# ms
 BUFSIZE = 128
 

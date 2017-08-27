@@ -2,9 +2,9 @@
  * Arduino pins 8/9/10 = ROM D0/D1/D2 
  */
 
-const unsigned long SERIAL_SPEED = 9600;
+const unsigned long SERIAL_SPEED = 115200;
 
-const word ROM_SIZE = 4 * 1024;
+const unsigned long ROM_SIZE = 64 * 1024UL;
 
 // Delay between address write and data read (us)
 const byte READ_DELAY = 50;
@@ -64,8 +64,8 @@ void loop () {
   }
 
   // Go!
-  for (word i = 0; i < ROM_SIZE; i++) {
-    byte b = read_byte (i);
+  for (unsigned long i = 0; i < ROM_SIZE; i++) {
+    byte b = read_byte ((word) i);
     Serial.write (b);
   }
 }
